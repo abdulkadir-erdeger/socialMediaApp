@@ -84,7 +84,7 @@ const ProfileScreenHeader = ({ user, isMe = false }) => {
           color="gray"
           style={{ width: 25 }}
         />
-        <Text>Graduated university</Text>
+        <Text>Gazi Üniversitesi</Text>
       </View>
 
       <View style={styles.textLine}>
@@ -99,7 +99,7 @@ const ProfileScreenHeader = ({ user, isMe = false }) => {
           color="gray"
           style={{ width: 25 }}
         />
-        <Text>From Tenerife</Text>
+        <Text>From Ankara</Text>
       </View>
     </View>
   );

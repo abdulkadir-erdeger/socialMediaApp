@@ -137,7 +137,7 @@ const UpdateProfileScreen = () => {
     >
       <Pressable onPress={pickImage} style={styles.imagePickerContainer}>
         {renderImage}
-        <Text>Change photo</Text>
+        <Text>Fotoğraf Değiştir</Text>
       </Pressable>
 
       <TextInput
@@ -148,7 +148,7 @@ const UpdateProfileScreen = () => {
       />
 
       <View style={styles.buttonContainer}>
-        <Button onPress={onSave} title="Save" disabled={!name} />
+        <Button onPress={onSave} title="Kaydet" disabled={!name} />
       </View>
     </KeyboardAvoidingView>
   );
