@@ -1,15 +1,22 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
-
+import { StyleSheet } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import Navigator from "./src/navigation";
+import { Amplify, Auth } from "aws-amplify";
+import awsconfig from "./src/aws-exports";
+import { withAuthenticator } from "aws-amplify-react-native";
 
-export default function App() {
+Amplify.configure({ ...awsconfig, Analytics: { disabled: true } });
+
+function App() {
+  // Auth.currentAuthenticatedUser().then((data) => console.log(data));
+
   return (
-    <View style={styles.container}>
+    <SafeAreaProvider style={styles.container}>
       <Navigator />
 
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaProvider>
   );
 }
 
@@ -18,3 +25,5 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
+export default withAuthenticator(App);
